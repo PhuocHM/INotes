@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col">
                 <select name="type_id" class="form-select" aria-label="Default select example">
-                    <option>Thể loại</option>
+                    <option value="0" selected>Thể loại</option>
                     <?php foreach ($types as $key => $type) : ?>
                         <option value="<?= $type->id ?>"><?= $type->name ?></option>
                     <?php endforeach; ?>

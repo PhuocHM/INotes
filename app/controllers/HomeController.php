@@ -92,9 +92,9 @@ class HomeController
         $objNoteType = new NoteType();
         $objNote = new NoteManagerment();
         $types = $objNoteType->getAll();
-        if (isset($_GET['type_id'])) {
+        if ($_GET['type_id'] != 0) {
             $type_id = $_GET['type_id'];
-            $result = $objNote->seach($title, $type_id);
+            $result = $objNote->seachWithType($type_id, $title);
         } else {
             $result = $objNote->seach($title);
         }
