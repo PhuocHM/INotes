@@ -35,8 +35,8 @@
                             <i class="fas fa-sort-down"></i>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Lớn đến bé</a></li>
-                            <li><a class="dropdown-item" href="#">Bé đến lớn</a></li>
+                            <li><a class="dropdown-item" href="index.php?controller=Home&action=sort&col_sort=id&sort_type=ASC">Cũ <i class="fas fa-arrow-right"></i> Mới</a></li>
+                            <li><a class="dropdown-item" href="index.php?controller=Home&action=sort&col_sort=id&sort_type=DESC">Mới <i class="fas fa-arrow-right"></i> Cũ</a></li>
                         </ul>
                     </div>
                 </th>
@@ -57,8 +57,8 @@
                             <i class="fas fa-sort-down"></i>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">A <i class="fas fa-arrow-right"></i> Z</a></li>
-                            <li><a class="dropdown-item" href="#">Z <i class="fas fa-arrow-right"></i> A</a></li>
+                            <li><a class="dropdown-item" href="index.php?controller=Home&action=sort&col_sort=name&sort_type=ASC">A <i class="fas fa-arrow-right"></i> Z</a></li>
+                            <li><a class="dropdown-item" href="index.php?controller=Home&action=sort&col_sort=name&sort_type=DESC">Z <i class="fas fa-arrow-right"></i> A</a></li>
                         </ul>
                     </div>
                 </th>
