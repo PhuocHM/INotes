@@ -91,13 +91,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <li class="page-item">
-                    <a class="page-link" href="index.php?controller=Home&action=index&page=<?= $pre ?>">Previous</a>
+                    <a class="page-link" href="index.php?controller=Home&action=sort&col_sort=<?= $col_sort; ?>&sort_type=<?= $sort_type; ?>&page=<?= $pre ?>">Previous</a>
                 </li>
                 <?php for ($i = 1; $i <= $pages; $i++) : ?>
-                    <li class="page-item"><a class="page-link" href="index.php?controller=Home&action=index&page=<?= $i ?>"><?= $i ?></a></li>
+                    <li class="page-item"><a class="page-link" href="index.php?controller=Home&action=sort&col_sort=<?= $col_sort; ?>&sort_type=<?= $sort_type; ?>&page=<?= $i ?>"><?= $i ?></a></li>
                 <?php endfor; ?>
                 <li class="page-item">
-                    <a class="page-link" href="index.php?controller=Home&action=index&page=<?= $next ?>">Next</a>
+                    <a class="page-link" href="index.php?controller=Home&action=sort&col_sort=<?= $col_sort; ?>&sort_type=<?= $sort_type; ?>&page=<?= $next ?>">Next</a>
                 </li>
             </ul>
         </nav>

@@ -27,6 +27,14 @@ class NoteManagerment extends DatabaseConnect
         $notes = $stmt->fetchAll();
         return $notes;
     }
+    public function getAllSort($start, $limit, $col_sort, $sort_type)
+    {
+        $sql = "SELECT note.id,note.title,note.content,note_type.name from note INNER JOIN note_type on note.type_id=note_type.id  ORDER BY $col_sort $sort_type LIMIT $start,$limit";
+        $stmt = $this->_db->query($sql);
+        $stmt->setFetchMode(PDO::FETCH_OBJ);
+        $notes = $stmt->fetchAll();
+        return $notes;
+    }
     public function getOne($id)
     {
         $sql = "SELECT * from note where id='$id'";

@@ -26,6 +26,22 @@ class HomeController
         $pre = $page - 1;
         include 'app/view/pages/home.php';
     }
+    public function sort()
+    {
+        $col_sort = $_GET['col_sort'];
+        $sort_type = $_GET['sort_type'];
+        $objNoteType = new NoteType();
+        $objNote = new NoteManagerment();
+        $limit = 5;
+        $types = $objNoteType->getAll();
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $start = ($page - 1) * $limit;
+        $notes = $objNote->getAllSort($start, $limit, $col_sort, $sort_type);
+        $pages = $objNote->pagination($limit);
+        $next = $page + 1;
+        $pre = $page - 1;
+        include 'app/view/pages/sort.php';
+    }
     public function view()
     {
         $note_id = $_GET['note_id'];

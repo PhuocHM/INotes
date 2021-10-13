@@ -13,7 +13,7 @@ if (isset($_GET['controller'])) {
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'view';
+    $action = 'index';
 }
 include_once 'app/view/layouts/header.php';
 include_once 'app/view/layouts/navbar.php';
@@ -46,6 +46,9 @@ try {
                         break;
                     case "view":
                         $objController->view();
+                        break;
+                    case "sort":
+                        $objController->sort();
                         break;
                     default:
                         throw new Exception("invalid action for controller manager !");
