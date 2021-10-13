@@ -1,6 +1,15 @@
 <h1 class="display-4 text-center">Các ghi chú</h1>
 <div class="space-between"></div>
 <div class="container" style="width:1000px">
+    <div>
+        <?php if (isset($_SESSION['messages'])) : ?>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION['messages'] ?>
+            </div>
+            <?php unset($_SESSION['messages']); ?>
+        <?php endif; ?>
+    </div>
+    <div class="space-between"></div>
     <form method="GET">
         <div class="row">
             <div class="col">

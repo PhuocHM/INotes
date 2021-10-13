@@ -47,16 +47,19 @@ class NoteManagerment extends DatabaseConnect
     {
         $sql = "INSERT INTO note (title,type_id,content) VALUES ('$title','$note_type','$content')";
         $this->_db->query($sql);
+        $_SESSION["messages"] = "Đã thêm thành công";
     }
     public function update($title, $note_type, $content, $id)
     {
         $sql = "UPDATE note SET title = '$title', type_id = '$note_type', content ='$content' WHERE id = '$id'";
         $this->_db->query($sql);
+        $_SESSION["messages"] = "Đã cập nhật thành công";
     }
     public function delete($id)
     {
         $sql = "DELETE FROM note WHERE id = '$id'";
         $this->_db->query($sql);
+        $_SESSION["messages"] = "Đã xóa thành công";
     }
     public function seach($title)
     {
