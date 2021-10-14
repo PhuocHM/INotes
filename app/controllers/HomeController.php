@@ -54,14 +54,27 @@ class HomeController
         $objNoteType = new NoteType();
         $objNote = new NoteManagerment();
         $types = $objNoteType->getAll();
-        include 'app/view/pages/create-note.php';
+        $required_fields = [
+            'title' => 'tiêu đề',
+            'type_id' => 'loại',
+            'content' => 'nội dung'
+        ];
+        $errors = [];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $title = $_POST["title"];
             $type_id = $_POST["type_id"];
             $content = $_POST["content"];
-            $objNote->store($title, $type_id, $content);
-            $this->redirect($this->url_controller . '&action=index');
+            foreach ($required_fields as $field => $label) {
+                if ($_POST[$field] == '') {
+                    $errors[$field] = 'Vui lòng nhập ' . $label;
+                }
+            }
+            if (count($errors) == 0) {
+                $objNote->store($title, $type_id, $content);
+                $this->redirect($this->url_controller . '&action=index');
+            }
         }
+        include 'app/view/pages/create-note.php';
     }
     public function edit()
     {
@@ -70,14 +83,27 @@ class HomeController
         $objNote = new NoteManagerment();
         $types = $objNoteType->getAll();
         $note = $objNote->getOne($note_id);
-        include 'app/view/pages/edit.php';
+        $required_fields = [
+            'title' => 'tiêu đề',
+            'type_id' => 'loại',
+            'content' => 'nội dung'
+        ];
+        $errors = [];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $title = $_POST["title"];
             $type_id = $_POST["type_id"];
             $content = $_POST["content"];
-            $objNote->update($title, $type_id, $content, $note_id);
-            $this->redirect($this->url_controller . '&action=index');
+            foreach ($required_fields as $field => $label) {
+                if ($_POST[$field] == '') {
+                    $errors[$field] = 'Vui lòng nhập ' . $label;
+                }
+            }
+            if (count($errors) == 0) {
+                $objNote->update($title, $type_id, $content, $note_id);
+                $this->redirect($this->url_controller . '&action=index');
+            }
         }
+        include 'app/view/pages/edit.php';
     }
     public function delete()
     {

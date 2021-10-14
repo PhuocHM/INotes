@@ -12,7 +12,7 @@
         </div>
         <div class="col">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Tiêu đề ...">
+                <input type="text" class="form-control" placeholder="Tiêu đề ..." required>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
             </div>
         </div>

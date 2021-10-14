@@ -86,7 +86,7 @@
                     <td>
                         <a href="index.php?controller=Home&action=view&note_id=<?= $note->id ?>" class="btn btn-success"><i class="far fa-eye"></i></a>
                         <a href="index.php?controller=Home&action=edit&note_id=<?= $note->id ?>" class="btn btn-warning"><i class="fas fa-pen"></i></a>
-                        <a href="index.php?controller=Home&action=delete&note_id=<?= $note->id ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                        <a onclick="return confirm('Are you sure you want to delete ?')" href="index.php?controller=Home&action=delete&note_id=<?= $note->id ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
