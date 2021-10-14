@@ -15,7 +15,7 @@
                     <option value="<?= $type->id ?>"><?= $type->name ?></option>
                 <?php endforeach; ?>
             </select>
-            <div id="emailHelp" class="form-text" style="color:red"><?= (isset($errors['type_id'])) ? $errors['type_id'] : ''; ?></div>
+            <div class="form-text" style="color:red"><?= (isset($errors['type_id'])) ? $errors['type_id'] : ''; ?></div>
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Nội dung</label>
